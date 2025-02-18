@@ -2,7 +2,7 @@
   "name": "mini-tpn",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
@@ -11,7 +11,9 @@
   "author": "tengkurafi",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "mongodb": "^6.13.0",
     "nodemon": "^3.1.9"
   }
 }
