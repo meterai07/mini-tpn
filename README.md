@@ -45,7 +45,9 @@ mini-tpn
 Create a `.env` file based on `env.example` and set the following variables:
 ```env
 PORT=3000
-MONGO_URI=mongodb://mongo:27017/mini-tpn
+SECRET_KEY=secret
+MONGODB_URI=mongodb://mongo:27017/mini-tpn
+JWT_SECRET=secret
 UPLOAD_DIR=uploads
 ```
 
@@ -59,7 +61,7 @@ UPLOAD_DIR=uploads
 npm install
 
 # Start the application
-npm start
+npm run dev
 ```
 
 ---
@@ -72,11 +74,6 @@ docker compose up --build
 # Stop containers
 docker compose down
 ```
-
----
-
-## 📤 **Uploading Attachments**
-Use the `/upload` endpoint to upload attachments. Files will be stored in the `uploads` folder.
 
 ---
 
