@@ -23,15 +23,7 @@ exports.createNewPartnership = async (req, res) => {
 
 exports.getUserPartnerships = async (req, res) => {
   try {
-    let partnerships = await findPartnershipsByUser(req.user._id);
-    const { title, status } = req.query;
-    if (title) {
-        partnerships = partnerships.filter(partnership => partnership.title.includes(title));
-    }
-    
-    if (status) {
-        partnerships = partnerships.filter(partnership => partnership.status.toLowerCase() === status.toLowerCase());
-    }
+    let partnerships = await findPartnershipsByUser(req.user._id, req.query);
 
     response(res, 200, 'Partnerships retrieved successfully', partnerships);
   } catch (error) {

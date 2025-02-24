@@ -42,7 +42,7 @@ exports.loginUser = async (req, res) => {
 
 exports.getAllUsers = async (req, res) => {
     try {
-        const users = await getAllUsers();
+        const users = await getAllUsers(req.query);
         response(res, 200, 'Users retrieved successfully', users);
     } catch (error) {
         response(res, 500, error.message);
