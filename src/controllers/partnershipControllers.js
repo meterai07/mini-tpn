@@ -7,7 +7,7 @@ exports.createNewPartnership = async (req, res) => {
     const files = req.files?.map(file => file.path);
     const partnershipData = {
       ...req.body,
-      attachments: files || [],
+      attachment: files || [],
       created: {
         userId: req.user._id,
         by: encrypt(req.user.fullname)
